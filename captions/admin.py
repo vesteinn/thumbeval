@@ -31,6 +31,7 @@ class CaptionAdmin(admin.ModelAdmin):
 
 @admin.register(Score)
 class ScoreAdmin(admin.ModelAdmin):
+    search_fields = ["caption__image__image", "caption__caption"]
     list_display_links = None
     list_display = [
         "caption_model",

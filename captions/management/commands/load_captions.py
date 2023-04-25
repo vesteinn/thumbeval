@@ -21,7 +21,8 @@ class Command(BaseCommand):
                 clip_caption = line[4]
                 sd_caption = line[5]
 
-                img = Image.objects.create(image=image_name)
+                img = Image.objects.filter(image=image_name).first()
+
                 sd_caption = Caption.objects.create(
                     caption=sd_caption, image=img, model=sd_model
                 )
